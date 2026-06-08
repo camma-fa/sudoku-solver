@@ -173,8 +173,11 @@ class Sudoku:
         success = self.__backtrack(0)
 
         if success:
-            print()  # To prevent the terminal prompt from overlapping the bot-
-            # tom border of the Sudoku board
+            print("\n")  # To prevent the terminal prompt from overlapping the
+            # bottom border of the Sudoku board
+        else:
+            print("\033[2J\033[H", end="")  # Clear the terminal screen
+            print("No solution exists for the given Sudoku puzzle.")
 
         return success
 
